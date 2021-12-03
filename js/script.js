@@ -10,17 +10,17 @@ function getRndInteger(min, max) {
 }
 
 // FUNZIONE PER CREARE I CONTAINER
-function createDiv(randomNum) {
+function createDiv(content) {
   // seleziono il mio container per creargli all'interno i miei div
   document.getElementById('container');
   // per ogni numero nel mio array creo un div nel mio html che lo contenga
   const numContainer = document.createElement('div');
   // all'interno del mio div inserisco uno dei miei random num
-  numContainer.innerHTML = randomNum;
-  // console.log(numContainer);
+  numContainer.innerHTML = content;
   // appendo i miei div al container precedentemente selezionato
   main_container.append(numContainer);
-
+  
+  // console.log(numContainer);
   return numContainer;
 }
 // /FUNZIONE PER CREARE I CONTAINER
@@ -35,10 +35,15 @@ while (arrayNumber.length < 5) {
   let randomNum = getRndInteger(1, 5); 
   if (arrayNumber.includes(randomNum)) {
     
-  } else { //se non è presento nell'array
+  } else { //se non è presente nell'array
     arrayNumber.push(randomNum)
     let element = createDiv(randomNum);
   }
 }
-console.log('array con numeri random', arrayNumber);
-
+console.log('array con numeri random', arrayNumber);    
+// // creo una costante che mi dia i secondi
+// const seconds = parseInt(5);
+// // creo un time out dopo il quale i div scompaiono
+// const timer = setInterval(() => { //function arrow anonime
+//   createDiv(element).classList.add('hide');
+// }, seconds * 1000);
