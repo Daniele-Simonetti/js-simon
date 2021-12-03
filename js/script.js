@@ -46,20 +46,27 @@ while (arrayNumber.length < 5) {
 console.log('array con numeri random', arrayNumber);  
 
 
-// creo una costante che mi dia i secondi
-const seconds = parseInt(1);
+// 2. creo una costante che mi dia i secondi
+const lowSeconds = parseInt(5);
 // creo un time out dopo il quale il main container si nasconde
-const timer = setTimeout(() => {
-  const x = document.querySelectorAll('.showed')
-  x.classList.add('hide');
-  
-}, seconds * 1000);
+let firstTimer = setTimeout(function hide() {
+  document.getElementById('main_container');
+  main_container.classList.add('hide');
+}, lowSeconds * 1000);
+console.log(lowSeconds);
 
-// const firstTimer = setTimeout(() => {
-//   function hide() {
-//     document.getElementById('main_container');
-//     main_container.classList.add('hide');
-//     console.log(main_container.value);
-//   }
-// }, seconds * 1000);
-// console.log(firstTimer);
+  
+// 3. faccio partire un countdown di 30 secondi
+let highSeconds = parseInt(30);
+
+// creo un intervallo di tempo che vada all'indietro
+let secondTimer = setInterval(function countDown(){
+  if (highSeconds > 0) {
+    console.log('secondi timer', highSeconds);
+    highSeconds -= 1;
+  } else {
+    console.log('Buon Anno!!!');
+    clearInterval(secondTimer);
+  }
+}, 10000 );
+// console.log(highSeconds);
