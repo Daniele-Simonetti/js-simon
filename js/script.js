@@ -47,9 +47,19 @@ console.log('array con numeri random', arrayNumber);
 
 
 // creo una costante che mi dia i secondi
-const seconds = parseInt(5);
+const seconds = parseInt(1);
 // creo un time out dopo il quale il main container si nasconde
-const timer = setInterval(() => {
-// document.querySelectorAll('.showed').classList.add(' hide');
+const timer = setTimeout(() => {
+  const x = document.querySelectorAll('.showed')
+  x.classList.add('hide');
   
 }, seconds * 1000);
+
+// const firstTimer = setTimeout(() => {
+//   function hide() {
+//     document.getElementById('main_container');
+//     main_container.classList.add('hide');
+//     console.log(main_container.value);
+//   }
+// }, seconds * 1000);
+// console.log(firstTimer);
