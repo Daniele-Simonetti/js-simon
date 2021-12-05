@@ -9,6 +9,18 @@ html {
 }
 
 /* general */
-.hide {
+div.hide {
   display: none;
 }
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+div.showed {
+  margin: 1em;
+  font-size: 4em;
+}
+
